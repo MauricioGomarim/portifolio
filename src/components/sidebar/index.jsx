@@ -65,23 +65,23 @@ export function Sidebar() {
           <div className="links">
             <ul>
               <li>
-                <a href="#sobre">
-                  <HiOutlineHome /> Sobre mim
+                <a href="#home">
+                  <HiOutlineHome /> Home
                 </a>
               </li>
               <li>
-                <a href="#skills">
-                <FaRegUser /> Minhas Skills
+                <a href="#sobre">
+                <FaRegUser /> Sobre mim
                 </a>
              
               </li>
               <li>
-                <a href="#"></a>
-                <GrDocument /> Formações
+                <a href="#skill">
+                <GrDocument /> Formações</a>
               </li>
               <li>
-                <a href="#projetos"></a>
-                <FaLaptopCode /> Projetos realizados
+                <a href="#projetos">
+                <FaLaptopCode /> Projetos realizados</a>
               </li>
             </ul>
           </div>

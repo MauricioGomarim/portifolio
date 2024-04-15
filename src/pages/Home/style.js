@@ -264,6 +264,13 @@ export const Container = styled.div`
 
   }
 
+  .projetos-cards {
+    margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+    }
+
   @media (max-width: 980px) {
     grid-template-columns: auto !important;
   }

@@ -5,32 +5,40 @@ import imgBG from "../../images/192.jpg";
 import { TypeAnimation } from "react-type-animation";
 import img from ".././../images/pxfuel.jpg";
 import { Button } from "../../components/button";
+import { Projeto } from "../../components/projeto";
+import imgRockeatNotes from "../../images/rockeat-notes.png";
+import imgFoodExplorer from "../../images/foodexplorer.png";
+import imgEstoque from "../../images/sistema-estoque.png";
+
+
 
 export function Home() {
-
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
     function handleScroll() {
-      const skillsSection = document.querySelector('.skills');
+      const skillsSection = document.querySelector(".skills");
       const skillsSectionTop = skillsSection.offsetTop;
       const skillsSectionHeight = skillsSection.offsetHeight;
       const windowHeight = window.innerHeight;
-      const scrollableHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - windowHeight;
       const scrolled = window.scrollY;
-      
+
       // Calcula a porcentagem vertical
-      const percentage = ((scrolled - skillsSectionTop + windowHeight) / skillsSectionHeight) * 80;
+      const percentage =
+        ((scrolled - skillsSectionTop + windowHeight) / skillsSectionHeight) *
+        80;
       setScrollPercentage(percentage);
     }
 
-    const skillsSection = document.querySelector('.skills');
+    const skillsSection = document.querySelector(".skills");
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          window.addEventListener('scroll', handleScroll);
+          window.addEventListener("scroll", handleScroll);
         } else {
-          window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener("scroll", handleScroll);
         }
       });
     });
@@ -39,16 +47,15 @@ export function Home() {
 
     return () => {
       observer.unobserve(skillsSection);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   return (
     <Container>
       <Sidebar />
       <div className="hero">
-        <section className="banner">
+        <section className="banner" id="home">
           <div className="content">
             <h1>Mauricio Gomarim</h1>
             <TypeAnimation
@@ -85,8 +92,8 @@ export function Home() {
             </p>
           </div>
 
-          <div class="flex flex-col md:flex-row mt-6 items-center">
-            <div class="w-full md:w-1/3">
+          <div className="flex flex-col md:flex-row mt-6 items-center">
+            <div className="w-full md:w-1/3">
               <img src={img} className="rounded-lg" />
             </div>
             <div className="w-full md:w-2/3 p-4">
@@ -111,13 +118,16 @@ export function Home() {
           </div>
         </section>
 
-        <section className="skills" id="skills">
+        <section className="skills" id="skill">
           <h1>Experiência e Formações</h1>
           <div className="divider mx-auto my-0 sm:mr-auto sm:ml-0"></div>
           <div className="timeline">
             <div className="line-back"></div>
             <div className="formacoes">
-              <div className="line" style={{ height: `${scrollPercentage}%` }}></div>
+              <div
+                className="line"
+                style={{ height: `${scrollPercentage}%` }}
+              ></div>
               <div className="formacao">
                 <div className="circle"></div>
                 <h2>Técnico em Informática</h2>
@@ -129,7 +139,7 @@ export function Home() {
                 </ul>
               </div>
               <div className="formacao">
-              <div className="circle"></div>
+                <div className="circle"></div>
                 <h2>NodeJS, ReactJS, Styled Components</h2>
                 <ul>
                   <li>Rocketseat - Explorer</li>
@@ -137,7 +147,7 @@ export function Home() {
               </div>
 
               <div className="formacao">
-              <div className="circle"></div>
+                <div className="circle"></div>
                 <h2>PHP, jQuery, Bootstrap</h2>
                 <ul>
                   <li>Udemy</li>
@@ -145,7 +155,7 @@ export function Home() {
               </div>
 
               <div className="formacao">
-              <div className="circle"></div>
+                <div className="circle"></div>
                 <h2>Git, Github, AWS S3</h2>
                 <ul>
                   <li>Rockeatseat</li>
@@ -156,17 +166,30 @@ export function Home() {
         </section>
 
         <section className="projetos" id="projetos">
-        <h1>Projetos realizados</h1>
-        <div className="divider mx-auto my-0 sm:mr-auto sm:ml-0"></div>
+          <h1>Projetos realizados</h1>
+          <div className="divider mx-auto my-0 sm:mr-auto sm:ml-0"></div>
 
-        <div className="categorias">
-          <button>Todos</button>
-          <button>Sites</button>
-          <button>Sistemas</button>
+          {/* <div className="categorias">
+            <button>Todos</button>
+            <button>Sites</button>
+            <button>Sistemas</button>
+          </div> */}
 
-        </div>
+          <div className="projetos-cards">
+            <Projeto
+              link="https://rockeatnotes.netlify.app"
+              imagem={imgRockeatNotes}
+            />
+            <Projeto
+              link="https://foodexplorer-loja.netlify.app"
+              imagem={imgFoodExplorer}
+            />
+            <Projeto
+              link="https://sistema-jeff.netlify.app"
+              imagem={imgEstoque}
+            />
+          </div>
         </section>
-
       </div>
     </Container>
   );
