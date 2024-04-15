@@ -5,6 +5,7 @@ import { HiOutlineHome } from "react-icons/hi";
 import { GrDocument } from "react-icons/gr";
 import { FaLaptopCode } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
+import imgPerfil from "../../images/1652296717743.jpg";
 
 import { useEffect, useState } from "react";
 
@@ -36,7 +37,7 @@ export function Sidebar() {
         </div>
         <div className="h-full overflow-auto">
           <div className="perfil">
-            <img src={img} />
+            <img src={imgPerfil} />
             <h1 className="name">Mauricio Gomarim</h1>
             <div className="icons">
               <a

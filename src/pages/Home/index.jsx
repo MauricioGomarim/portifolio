@@ -9,6 +9,8 @@ import { Projeto } from "../../components/projeto";
 import imgRockeatNotes from "../../images/rockeat-notes.png";
 import imgFoodExplorer from "../../images/foodexplorer.png";
 import imgEstoque from "../../images/sistema-estoque.png";
+import imgPerfil from "../../images/1652296717743.jpg";
+
 
 
 
@@ -94,7 +96,7 @@ export function Home() {
 
           <div className="flex flex-col md:flex-row mt-6 items-center">
             <div className="w-full md:w-1/3">
-              <img src={img} className="rounded-lg" />
+              <img src={imgPerfil} className="imgPerfil rounded-lg" />
             </div>
             <div className="w-full md:w-2/3 p-4">
               <div className="title">

@@ -140,6 +140,10 @@ export const Container = styled.div`
       rgba(255, 255, 255, 1) 20%
     );
 
+    .imgPerfil {
+      border-radius: 50%;
+    }
+
     @media (max-width: 480px) {
       background: linear-gradient(
         180deg,
