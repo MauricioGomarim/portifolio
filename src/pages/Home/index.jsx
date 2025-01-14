@@ -11,11 +11,39 @@ import imgFoodExplorer from "../../images/foodexplorer.png";
 import imgEstoque from "../../images/sistema-estoque.png";
 import imgPerfil from "../../images/1652296717743.jpg";
 
-
-
+import advocacia from "../../images/advocaciakamille.png";
+import alphainstitucional from "../../images/alpha-institucional.png";
+import alpha from "../../images/alpha.png";
+import kongpay from "../../images/kongpay.png";
+import lojacaminhoseguro from "../../images/lojacaminhoseguro.png";
+import papelaria from "../../images/papelaria.png";
+import revvero from "../../images/revvero.png";
+import secapower from "../../images/secapower.png";
+import dwbordados from "../../images/dwbordados.png";
+import numclic from "../../images/numclic.png";
 
 export function Home() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const [sitesState, setSites] = useState(1);
+  const [sistemasState, setSistemas] = useState(1);
+  const [todosState, setTodos] = useState(1);
+
+  function handleSite() {
+    setSistemas(0);
+
+    setSites(1);
+  }
+
+  function handleSistemas() {
+    setSites(0);
+    setSistemas(1);
+  }
+
+  function handleTodos() {
+    setSistemas(1);
+    setSites(1);
+  }
 
   useEffect(() => {
     function handleScroll() {
@@ -87,10 +115,13 @@ export function Home() {
           </div>
           <div className="text">
             <p className="text-center sm:text-start">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              nostrum molestias cupiditate nisi et deleniti totam ex vero optio,
-              quia adipisci sapiente perferendis animi officia minus. Et ratione
-              ducimus iure!
+              Iniciei minha carreira na área de tecnologia em 2022, motivado
+              pelo interesse no desenvolvimento de sites. Desde então, mergulhei
+              nos estudos e me dediquei intensamente, o que me permitiu
+              conquistar minha primeira vaga como desenvolvedor em apenas seis
+              meses. Desde esse marco, mantenho um aprendizado constante e busco
+              novos desafios que me permitam crescer pessoal e
+              profissionalmente.
             </p>
           </div>
 
@@ -107,7 +138,9 @@ export function Home() {
               <div className="flex flex-col sm:flex-row mt-6 gap-5 cards">
                 <div className="w-full sm:w-1/2ull sm:w-1/2 card">
                   <h1 className="text-2xl">Front-end</h1>
-                  <p>ReactJS, TailwindCSS, Styled Components, jQuery</p>
+                  <p>
+                    ReactJS, TailwindCSS, Styled Components, jQuery, Wordpress
+                  </p>
                   <Button className="!mt-auto" title="Ver projetos" />
                 </div>
                 <div className="w-full sm:w-1/2 card flex-col flex">
@@ -171,24 +204,77 @@ export function Home() {
           <h1>Projetos realizados</h1>
           <div className="divider mx-auto my-0 sm:mr-auto sm:ml-0"></div>
 
-          {/* <div className="categorias">
-            <button>Todos</button>
-            <button>Sites</button>
-            <button>Sistemas</button>
-          </div> */}
+          <div className="categorias">
+            <button onClick={(handleTodos)}  className={sitesState && sistemasState ? 'active' : ''} >Todos</button>
+            <button onClick={(handleSite)} className={sitesState ? 'active' : ''}>Sites</button>
+            <button onClick={(handleSistemas)} className={sistemasState ? 'active' : ''}>Sistemas</button>
+          </div>
 
           <div className="projetos-cards">
             <Projeto
+              link="https://numclicbr.com"
+              imagem={numclic}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
               link="https://rockeatnotes.netlify.app"
               imagem={imgRockeatNotes}
+              className={sistemasState ? "" : "disabled"}
             />
             <Projeto
               link="https://foodexplorer-loja.netlify.app"
               imagem={imgFoodExplorer}
+              className={sistemasState ? "" : "disabled"}
             />
             <Projeto
               link="https://sistema-jeff.netlify.app"
               imagem={imgEstoque}
+              className={sistemasState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://advocaciakamillebarros.com.br"
+              imagem={advocacia}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://alphaempreendedorismo.com.br/home-institucional/"
+              imagem={alphainstitucional}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://alphaempreendedorismo.com.br"
+              imagem={alpha}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://kongpay.com.br"
+              imagem={kongpay}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://lojacaminhoseguro.com"
+              imagem={lojacaminhoseguro}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://papelariamundole.com.br"
+              imagem={papelaria}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://revveromais.com.br"
+              imagem={revvero}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://kongpay.com.br/secapower"
+              imagem={secapower}
+              className={sitesState ? "" : "disabled"}
+            />
+            <Projeto
+              link="https://dwbordados.com.br/home/"
+              imagem={dwbordados}
+              className={sitesState ? "" : "disabled"}
             />
           </div>
         </section>

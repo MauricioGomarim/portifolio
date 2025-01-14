@@ -5,6 +5,9 @@ export const Container = styled.div`
   grid-template-columns: 300px auto;
   overflow: hidden;
 
+  .disabled {
+    display: none;
+  }
   .sidebar {
     position: fixed;
     left: 0;
@@ -264,6 +267,11 @@ export const Container = styled.div`
           color: ${({ theme }) => theme.COLORS.WHITE};
         }
       }
+    }
+
+    .categorias button.active {
+      background-color: ${({ theme }) => theme.COLORS.BLUE_200};
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
   }
